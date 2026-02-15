@@ -28,8 +28,8 @@
 *Приложите скриншоты конфигурации, выполнения работы: состояния и режимы работы серверов.*
 `Конфигурации мастера и слейва`
 ![0](image.png)
-[master.cnf](master.cnf)
-[slave.cnf](slave.cnf)
+![master.cnf](master.cnf)
+![slave.cnf](slave.cnf)
 
 ---
 
