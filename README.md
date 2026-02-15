@@ -18,6 +18,14 @@
     В этой схеме все узлы равноправны. 
     Каждый сервер может одновременно и записывать, и считывать данные.
 ```
+customer_name     |total_amount|
+------------------+------------+
+SLEDGE GILBERT    |       14.98|
+VINES CECIL       |        7.98|
+GRIGSBY THOMAS    |        3.98|
+WASHINGTON RUBY   |       12.98|
+BARKLEY VICTOR    |       21.97|
+FOX HOLLY         |        9.97|
 ---
 
 ### Задание 2
