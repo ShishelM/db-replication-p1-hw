@@ -42,6 +42,14 @@
 
 ![1](image-1.png)
 
+`Поднимаем тестовые бд с помощью docker compose:`
+
+[docker-compose.yml](docker-compose.yml)
+
+![2](image-2.png)
+
+
+
 ---
 
 ## Дополнительные задания (со звёздочкой*)
