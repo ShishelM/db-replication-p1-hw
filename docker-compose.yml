@@ -1,0 +1,29 @@
+services:
+  mysql-master:
+    image: mysql:8.0
+    container_name: mysql-master
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_REPL_USER: ${MYSQL_REPL_USER}
+      MYSQL_REPL_PASSWORD: ${MYSQL_REPL_PASSWORD}
+    volumes:
+      - ./master.cnf:/etc/mysql/conf.d/my.cnf
+      - ./master_init:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+
+  mysql-slave:
+    image: mysql:8.0
+    container_name: mysql-slave
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_REPL_USER: ${MYSQL_REPL_USER}
+      MYSQL_REPL_PASSWORD: ${MYSQL_REPL_PASSWORD}
+    volumes:
+      - ./slave.cnf:/etc/mysql/conf.d/my.cnf
+      - ./slave_init:/docker-entrypoint-initdb.d
+    ports:
+      - "3307:3306"
+    depends_on:
+      - mysql-master
