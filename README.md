@@ -32,7 +32,7 @@
 
 [slave.cnf](slave.cnf)
 
-![0](image.png)
+![0](/img/image.png)
 
 `Скрипты для автоматизации настройки:` 
 
@@ -40,13 +40,13 @@
 
 [Настройка репликации на слейве](slave_init/setup.sh)
 
-![1](image-1.png)
+![1](/img/image-1.png)
 
 `Поднимаем тестовые бд с помощью docker compose:`
 
 [docker-compose.yml](docker-compose.yml)
 
-![2](image-2.png)
+![2](/img/image-2.png)
 
 `Проверяем статус на slave:`
 
@@ -118,12 +118,20 @@ Network_Namespace            |                                                  
 
 `Добавляем тестовую табличку на master`
 ```sql
-CREATE TABLE test_table (
-	id INT PRIMARY KEY,
-	name VARCHAR(50)
-);
+CREATE TABLE test_table (id INT PRIMARY KEY, name VARCHAR(50));
+```
+`Видим что таблица успешно реплицировалась на слейв:`
+
+![3](/img/image-3.png)
+
+`Добавляем тестовые данные в таблицу:`
+```sql
+INSERT INTO test_table (id, name) VALUES (1, 'Master Record');
 ```
 
+`Проверяем, строка появилась так же на слейв`
+
+![4](/img/image-4.png)
 
 ---
 
